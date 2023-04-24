@@ -1,14 +1,11 @@
 <?php
-require 'vendor/autoload.php';
 
-Flight::route('/',function(){
-    echo "Hello World";
+require "../vendor/autoload.php";
+require "./services/MidtermService.php";
 
-});
+Flight::register('midtermService', 'MidtermService');
 
-Flight::route("GET/test", function(){
-    echo "Hello Test";   
-});
+require 'routes/MidtermRoutes.php';
 
 Flight::start();
-?>
+ ?>
